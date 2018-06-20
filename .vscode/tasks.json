@@ -4,13 +4,33 @@
     {
       "label": "build firmware",
       "type": "shell",
-      "command": "echo $PATH && echo $INCLUDE && echo $LIB",
+      "command": "make test",
       "options": {
         "env": {
-          "PATH": "${env:PATH}:${config:arm-none-eabi.bin}",
           "INCLUDE": "${config:arm-none-eabi.include}",
           "LIB": "${config:arm-none-eabi.lib}",
         }
+      },
+      "osx": {
+        "options": {
+          "env": {
+            "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+          }
+        },
+      },
+      "linux": {
+        "options": {
+          "env": {
+            "PATH": "${config:arm-none-eabi.bin}:${env:PATH}",
+          }
+        },
+      },
+      "windows": {
+        "options": {
+          "env": {
+            "PATH": "${config:arm-none-eabi.bin};${env:PATH}",
+          }
+        },
       },
       "group": {
         "kind": "build",
