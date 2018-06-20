@@ -59,5 +59,6 @@ Here is an example of tasks.json for GNU make.
 
 ### Version 0.0.1
 GNU Make 4.2.1
+
 Version 7-2017-q4-major for Windows 
 Released: December 18, 2017
