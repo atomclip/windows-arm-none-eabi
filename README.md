@@ -57,6 +57,9 @@ Here is an example of tasks.json for GNU make.
 
 ## Release Notes
 
+### Version 0.0.2
+Changed ${env:HOME} to ${env:USERPROFILE}.
+
 ### Version 0.0.1
 GNU Make 4.2.1
 

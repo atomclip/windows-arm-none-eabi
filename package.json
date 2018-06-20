@@ -21,7 +21,7 @@
             "string",
             "null"
           ],
-          "default": "${env:HOME}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.1/bin",
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.1/bin",
           "description": "The path to the GNU toolchain."
         },
         "arm-none-eabi.include": {
@@ -29,7 +29,7 @@
             "string",
             "null"
           ],
-          "default": "${env:HOME}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.1/arm-none-eabi/include",
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.1/arm-none-eabi/include",
           "description": "The path to the GCC header files."
         },
         "arm-none-eabi.lib": {
@@ -37,7 +37,7 @@
             "string",
             "null"
           ],
-          "default": "${env:HOME}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.1/lib",
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.1/lib",
           "description": "The path to the GCC library files."
         }
       }
