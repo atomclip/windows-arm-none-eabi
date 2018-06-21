@@ -86,6 +86,9 @@ test:
 
 ## Release Notes
 
+### Version 0.0.5
+Operating system specific PATH environment variable. 
+
 ### Version 0.0.2
 Changed ${env:HOME} to ${env:USERPROFILE}.
 
