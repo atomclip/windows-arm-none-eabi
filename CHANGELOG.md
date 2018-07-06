@@ -1,4 +1,4 @@
-### Version 0.0.6
+### Version 0.1.0
 Replaced toolchain with Version 7-2018-q2-update for Windows.
 
 ### Version 0.0.5

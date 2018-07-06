@@ -3,7 +3,7 @@
   "displayName": "windows-arm-none-eabi",
   "description": "GNU Arm embedded toolchain for Windows",
   "icon": "images/gcc-windows-128x128.png",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "preview": true,
   "publisher": "atomclip",
   "engines": {
@@ -22,7 +22,7 @@
             "string",
             "null"
           ],
-          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.6/bin",
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.0/bin",
           "description": "The path to the GNU toolchain."
         },
         "arm-none-eabi.include": {
@@ -30,7 +30,7 @@
             "string",
             "null"
           ],
-          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.6/arm-none-eabi/include",
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.0/arm-none-eabi/include",
           "description": "The path to the GCC header files."
         },
         "arm-none-eabi.lib": {
@@ -38,7 +38,7 @@
             "string",
             "null"
           ],
-          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.0.6/lib",
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.0/lib",
           "description": "The path to the GCC library files."
         }
       }
