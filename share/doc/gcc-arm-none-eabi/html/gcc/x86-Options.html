@@ -897,8 +897,8 @@ preferred alignment to <samp>-mpreferred-stack-boundary=2</samp>.
 <dt><code>-mpclmul</code></dt>
 <dd><a name="index-mpclmul"></a>
 </dd>
-<dt><code>-mclfushopt</code></dt>
-<dd><a name="index-mclfushopt"></a>
+<dt><code>-mclflushopt</code></dt>
+<dd><a name="index-mclflushopt"></a>
 </dd>
 <dt><code>-mfsgsbase</code></dt>
 <dd><a name="index-mfsgsbase"></a>
@@ -1536,6 +1536,46 @@ on to provide serious protection.
 <p>Generate code that uses only the general-purpose registers.  This
 prevents the compiler from using floating-point, vector, mask and bound
 registers.
+</p>
+</dd>
+<dt><code>-mindirect-branch=<var>choice</var></code></dt>
+<dd><a name="index-_002dmindirect_002dbranch"></a>
+<p>Convert indirect call and jump with <var>choice</var>.  The default is
+&lsquo;<samp>keep</samp>&rsquo;, which keeps indirect call and jump unmodified.
+&lsquo;<samp>thunk</samp>&rsquo; converts indirect call and jump to call and return thunk.
+&lsquo;<samp>thunk-inline</samp>&rsquo; converts indirect call and jump to inlined call
+and return thunk.  &lsquo;<samp>thunk-extern</samp>&rsquo; converts indirect call and jump
+to external call and return thunk provided in a separate object file.
+You can control this behavior for a specific function by using the
+function attribute <code>indirect_branch</code>.  See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>.
+</p>
+<p>Note that <samp>-mcmodel=large</samp> is incompatible with
+<samp>-mindirect-branch=thunk</samp> nor
+<samp>-mindirect-branch=thunk-extern</samp> since the thunk function may
+not be reachable in large code model.
+</p>
+</dd>
+<dt><code>-mfunction-return=<var>choice</var></code></dt>
+<dd><a name="index-_002dmfunction_002dreturn"></a>
+<p>Convert function return with <var>choice</var>.  The default is &lsquo;<samp>keep</samp>&rsquo;,
+which keeps function return unmodified.  &lsquo;<samp>thunk</samp>&rsquo; converts function
+return to call and return thunk.  &lsquo;<samp>thunk-inline</samp>&rsquo; converts function
+return to inlined call and return thunk.  &lsquo;<samp>thunk-extern</samp>&rsquo; converts
+function return to external call and return thunk provided in a separate
+object file.  You can control this behavior for a specific function by
+using the function attribute <code>function_return</code>.
+See <a href="Function-Attributes.html#Function-Attributes">Function Attributes</a>.
+</p>
+<p>Note that <samp>-mcmodel=large</samp> is incompatible with
+<samp>-mfunction-return=thunk</samp> nor
+<samp>-mfunction-return=thunk-extern</samp> since the thunk function may
+not be reachable in large code model.
+</p>
+
+</dd>
+<dt><code>-mindirect-branch-register</code></dt>
+<dd><a name="index-_002dmindirect_002dbranch_002dregister"></a>
+<p>Force indirect call and jump via register.
 </p>
 </dd>
 </dl>

@@ -1,10 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <!-- This file documents the GNU linker LD
-(GNU Tools for Arm Embedded Processors 7-2017-q4-major)
-version 2.29.51.
+(GNU Tools for Arm Embedded Processors 7-2018-q2-update)
+version 2.30.0.
 
-Copyright (C) 1991-2017 Free Software Foundation, Inc.
+Copyright (C) 1991-2018 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -1005,8 +1005,9 @@ using pages of this size.
 </p>
 </dd>
 <dt>&lsquo;<samp>defs</samp>&rsquo;</dt>
-<dd><p>Disallows undefined symbols in object files.  Undefined symbols in
-shared libraries are still allowed.
+<dd><p>Report unresolved symbol references from regular object files.  This
+is done even if the linker is creating a non-symbolic shared library.
+This option is the inverse of &lsquo;<samp>-z undefs</samp>&rsquo;.
 </p>
 </dd>
 <dt>&lsquo;<samp>dynamic-undefined-weak</samp>&rsquo;</dt>
@@ -1146,6 +1147,14 @@ than the system page size will render this protection ineffective.
 Don&rsquo;t create an ELF <code>PT_GNU_RELRO</code> segment if &lsquo;<samp>norelro</samp>&rsquo;.
 </p>
 </dd>
+<dt>&lsquo;<samp>separate-code</samp>&rsquo;</dt>
+<dt>&lsquo;<samp>noseparate-code</samp>&rsquo;</dt>
+<dd><p>Create separate code <code>PT_LOAD</code> segment header in the object.  This
+specifies a memory segment that should contain only instructions and must
+be in wholly disjoint pages from any other data.  Don&rsquo;t create separate
+code <code>PT_LOAD</code> segment if &lsquo;<samp>noseparate-code</samp>&rsquo; is used.
+</p>
+</dd>
 <dt>&lsquo;<samp>shstk</samp>&rsquo;</dt>
 <dd><p>Generate GNU_PROPERTY_X86_FEATURE_1_SHSTK in .note.gnu.property section
 to indicate compatibility with Intel Shadow Stack.  Supported for
@@ -1164,6 +1173,12 @@ Specifying zero will override any default non-zero sized
 <dd><p>Report an error if DT_TEXTREL is set, i.e., if the binary has dynamic
 relocations in read-only sections.  Don&rsquo;t report an error if
 &lsquo;<samp>notext</samp>&rsquo; or &lsquo;<samp>textoff</samp>&rsquo;.
+</p>
+</dd>
+<dt>&lsquo;<samp>undefs</samp>&rsquo;</dt>
+<dd><p>Do not report unresolved symbol references from regular object files,
+either when creating an executable, or when creating a shared library.
+This option is the inverse of &lsquo;<samp>-z defs</samp>&rsquo;.
 </p>
 </dd>
 </dl>
@@ -1606,6 +1621,7 @@ while linking a large executable.
 </p>
 <a name="index-_002d_002dno_002dundefined"></a>
 <a name="index-_002dz-defs"></a>
+<a name="index-_002dz-undefs"></a>
 </dd>
 <dt><code>--no-undefined</code></dt>
 <dt><code>-z defs</code></dt>
@@ -1614,6 +1630,8 @@ is done even if the linker is creating a non-symbolic shared library.
 The switch <samp>--[no-]allow-shlib-undefined</samp> controls the
 behaviour for reporting unresolved references found in shared
 libraries being linked in.
+</p>
+<p>The effects of this option can be reverted by using <code>-z undefs</code>.
 </p>
 <a name="index-_002d_002dallow_002dmultiple_002ddefinition"></a>
 <a name="index-_002dz-muldefs"></a>

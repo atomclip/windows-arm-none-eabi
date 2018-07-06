@@ -2,7 +2,7 @@
 <html>
 <!-- This file documents the BFD library.
 
-Copyright (C) 1991-2017 Free Software Foundation, Inc.
+Copyright (C) 1991-2018 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -130,7 +130,7 @@ section <var>sec</var> to the values <var>rel</var> and <var>count</var>.
 The argument <var>abfd</var> is ignored.
 </p><div class="example">
 <pre class="example">#define bfd_set_reloc(abfd, asect, location, count) \
-     BFD_SEND (abfd, _bfd_set_reloc, (abfd, asect, location, count))
+       BFD_SEND (abfd, _bfd_set_reloc, (abfd, asect, location, count))
 </pre></div>
 
 <a name="index-bfd_005fset_005ffile_005fflags"></a>
@@ -267,8 +267,8 @@ Not enough memory exists to create private data for <var>obfd</var>.
 </li></ul>
 <div class="example">
 <pre class="example">#define bfd_copy_private_header_data(ibfd, obfd) \
-     BFD_SEND (obfd, _bfd_copy_private_header_data, \
-               (ibfd, obfd))
+       BFD_SEND (obfd, _bfd_copy_private_header_data, \
+                 (ibfd, obfd))
 </pre></div>
 
 <a name="index-bfd_005fcopy_005fprivate_005fbfd_005fdata"></a>
@@ -289,8 +289,8 @@ Not enough memory exists to create private data for <var>obfd</var>.
 </li></ul>
 <div class="example">
 <pre class="example">#define bfd_copy_private_bfd_data(ibfd, obfd) \
-     BFD_SEND (obfd, _bfd_copy_private_bfd_data, \
-               (ibfd, obfd))
+       BFD_SEND (obfd, _bfd_copy_private_bfd_data, \
+                 (ibfd, obfd))
 </pre></div>
 
 <a name="index-bfd_005fset_005fprivate_005fflags"></a>
@@ -311,7 +311,7 @@ Not enough memory exists to create private data for <var>obfd</var>.
 </li></ul>
 <div class="example">
 <pre class="example">#define bfd_set_private_flags(abfd, flags) \
-     BFD_SEND (abfd, _bfd_set_private_flags, (abfd, flags))
+       BFD_SEND (abfd, _bfd_set_private_flags, (abfd, flags))
 </pre></div>
 
 <a name="index-Other-functions"></a>
@@ -328,7 +328,7 @@ The following functions exist but have not yet been documented.
                  (abfd, syms, sec, off, file, func, line, NULL))
 
 #define bfd_find_nearest_line_discriminator(abfd, sec, syms, off, file, func, \
-                                            line, disc) \
+                                           line, disc) \
        BFD_SEND (abfd, _bfd_find_nearest_line, \
                  (abfd, syms, sec, off, file, func, line, disc))
 
@@ -588,7 +588,7 @@ all methods listed below).
      if an error occurs.  */
   file_ptr (*btell) (struct bfd *abfd);
   /* For the following, on successful completion a value of 0 is returned.
-     Otherwise, a value of -1 is returned (and  <code>bfd_error</code> is set).  */
+     Otherwise, a value of -1 is returned (and <code>bfd_error</code> is set).  */
   int (*bseek) (struct bfd *abfd, file_ptr offset, int whence);
   int (*bclose) (struct bfd *abfd);
   int (*bflush) (struct bfd *abfd);

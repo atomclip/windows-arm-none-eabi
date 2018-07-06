@@ -137,8 +137,12 @@ five otherwise.  This is best for most machines.
 <dl>
 <dt><a name="index-WORD_005fREGISTER_005fOPERATIONS"></a>Macro: <strong>WORD_REGISTER_OPERATIONS</strong></dt>
 <dd><p>Define this macro to 1 if operations between registers with integral mode
-smaller than a word are always performed on the entire register.
-Most RISC machines have this property and most CISC machines do not.
+smaller than a word are always performed on the entire register.  To be
+more explicit, if you start with a pair of <code>word_mode</code> registers with
+known values and you do a subword, for example <code>QImode</code>, addition on
+the low part of the registers, then the compiler may consider that the
+result has a known value in <code>word_mode</code> too if the macro is defined
+to 1.  Most RISC machines have this property and most CISC machines do not.
 </p></dd></dl>
 
 <dl>

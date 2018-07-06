@@ -785,7 +785,7 @@ size.
 <dt><code>-mno-strict-align</code></dt>
 <dt><code>-mstrict-align</code></dt>
 <dd><a name="index-mno_002dstrict_002dalign-1"></a>
-<a name="index-mstrict_002dalign-2"></a>
+<a name="index-mstrict_002dalign-3"></a>
 <p>On System V.4 and embedded PowerPC systems do not (do) assume that
 unaligned memory references are handled by the system.
 </p>
@@ -1167,6 +1167,14 @@ other <samp>-msdata</samp> options are used.
 <p>On embedded PowerPC systems, put all initialized global and static data
 in the <code>.data</code> section, and all uninitialized data in the
 <code>.bss</code> section.
+</p>
+</dd>
+<dt><code>-mreadonly-in-sdata</code></dt>
+<dt><code>-mreadonly-in-sdata</code></dt>
+<dd><a name="index-mreadonly_002din_002dsdata"></a>
+<a name="index-mno_002dreadonly_002din_002dsdata"></a>
+<p>Put read-only objects in the <code>.sdata</code> section as well.  This is the
+default.
 </p>
 </dd>
 <dt><code>-mblock-move-inline-limit=<var>num</var></code></dt>

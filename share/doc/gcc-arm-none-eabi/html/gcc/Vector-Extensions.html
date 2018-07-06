@@ -210,6 +210,7 @@ For mixed operations between a scalar <code>s</code> and a vector <code>v</code>
 <code>s &amp;&amp; v</code> is equivalent to <code>s?v!=0:0</code> (the evaluation is
 short-circuit) and <code>v &amp;&amp; s</code> is equivalent to <code>v!=0 &amp; (s?-1:0)</code>.
 </p>
+<a name="index-_005f_005fbuiltin_005fshuffle"></a>
 <p>Vector shuffling is available using functions
 <code>__builtin_shuffle (vec, mask)</code> and
 <code>__builtin_shuffle (vec0, vec1, mask)</code>.

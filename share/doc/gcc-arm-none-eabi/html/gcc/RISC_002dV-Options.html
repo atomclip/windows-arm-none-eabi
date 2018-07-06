@@ -86,36 +86,49 @@ Next: <a href="RL78-Options.html#RL78-Options" accesskey="n" rel="next">RL78 Opt
 <p>Set the cost of branches to roughly <var>n</var> instructions.
 </p>
 </dd>
-<dt><code>-mmemcpy</code></dt>
-<dt><code>-mno-memcpy</code></dt>
-<dd><a name="index-mmemcpy-2"></a>
-<p>Don&rsquo;t optimize block moves.
-</p>
-</dd>
 <dt><code>-mplt</code></dt>
 <dt><code>-mno-plt</code></dt>
 <dd><a name="index-plt"></a>
-<p>When generating PIC code, allow the use of PLTs. Ignored for non-PIC.
+<p>When generating PIC code, do or don&rsquo;t allow the use of PLTs. Ignored for
+non-PIC.  The default is <samp>-mplt</samp>.
 </p>
 </dd>
 <dt><code>-mabi=<var>ABI-string</var></code></dt>
 <dd><a name="index-mabi-2"></a>
-<p>Specify integer and floating-point calling convention.  This defaults to the
-natural calling convention: e.g.&nbsp;LP64 for RV64I, ILP32 for RV32I, LP64D for
-RV64G.
+<p>Specify integer and floating-point calling convention.  <var>ABI-string</var>
+contains two parts: the size of integer types and the registers used for
+floating-point types.  For example &lsquo;<samp>-march=rv64ifd -mabi=lp64d</samp>&rsquo; means that
+&lsquo;<samp>long</samp>&rsquo; and pointers are 64-bit (implicitly defining &lsquo;<samp>int</samp>&rsquo; to be
+32-bit), and that floating-point values up to 64 bits wide are passed in F
+registers.  Contrast this with &lsquo;<samp>-march=rv64ifd -mabi=lp64f</samp>&rsquo;, which still
+allows the compiler to generate code that uses the F and D extensions but only
+allows floating-point values up to 32 bits long to be passed in registers; or
+&lsquo;<samp>-march=rv64ifd -mabi=lp64</samp>&rsquo;, in which no floating-point arguments will be
+passed in registers.
+</p>
+<p>The default for this argument is system dependent, users who want a specific
+calling convention should specify one explicitly.  The valid calling
+conventions are: &lsquo;<samp>ilp32</samp>&rsquo;, &lsquo;<samp>ilp32f</samp>&rsquo;, &lsquo;<samp>ilp32d</samp>&rsquo;, &lsquo;<samp>lp64</samp>&rsquo;,
+&lsquo;<samp>lp64f</samp>&rsquo;, and &lsquo;<samp>lp64d</samp>&rsquo;.  Some calling conventions are impossible to
+implement on some ISAs: for example, &lsquo;<samp>-march=rv32if -mabi=ilp32d</samp>&rsquo; is
+invalid because the ABI requires 64-bit values be passed in F registers, but F
+registers are only 32 bits wide.
 </p>
 </dd>
 <dt><code>-mfdiv</code></dt>
 <dt><code>-mno-fdiv</code></dt>
 <dd><a name="index-mfdiv"></a>
-<p>Use hardware floating-point divide and square root instructions.  This requires
-the F or D extensions for floating-point registers.
+<p>Do or don&rsquo;t use hardware floating-point divide and square root instructions.
+This requires the F or D extensions for floating-point registers.  The default
+is to use them if the specified architecture has these instructions.
 </p>
 </dd>
 <dt><code>-mdiv</code></dt>
 <dt><code>-mno-div</code></dt>
 <dd><a name="index-mdiv-3"></a>
-<p>Use hardware instructions for integer division.  This requires the M extension.
+<p>Do or don&rsquo;t use hardware instructions for integer division.  This requires the
+M extension.  The default is to use them if the specified architecture has
+these instructions.
 </p>
 </dd>
 <dt><code>-march=<var>ISA-string</var></code></dt>
@@ -139,16 +152,48 @@ name.
 <dt><code>-msave-restore</code></dt>
 <dt><code>-mno-save-restore</code></dt>
 <dd><a name="index-msave_002drestore"></a>
-<p>Use smaller but slower prologue and epilogue code.
+<p>Do or don&rsquo;t use smaller but slower prologue and epilogue code that uses
+library function calls.  The default is to use fast inline prologues and
+epilogues.
 </p>
 </dd>
-<dt><code>-mcmodel=<var>code-model</var></code></dt>
-<dd><a name="index-mcmodel-1"></a>
-<p>Specify the code model.
+<dt><code>-mstrict-align</code></dt>
+<dt><code>-mno-strict-align</code></dt>
+<dd><a name="index-mstrict_002dalign-2"></a>
+<p>Do not or do generate unaligned memory accesses.  The default is set depending
+on whether the processor we are optimizing for supports fast unaligned access
+or not.
+</p>
+</dd>
+<dt><code>-mcmodel=medlow</code></dt>
+<dd><a name="index-mcmodel_003dmedlow"></a>
+<p>Generate code for the medium-low code model. The program and its statically
+defined symbols must lie within a single 2 GiB address range and must lie
+between absolute addresses -2 GiB and +2 GiB. Programs can be
+statically or dynamically linked. This is the default code model.
+</p>
+</dd>
+<dt><code>-mcmodel=medany</code></dt>
+<dd><a name="index-mcmodel_003dmedany"></a>
+<p>Generate code for the medium-any code model. The program and its statically
+defined symbols must be within any single 2 GiB address range. Programs can be
+statically or dynamically linked.
+</p>
+</dd>
+<dt><code>-mexplicit-relocs</code></dt>
+<dt><code>-mno-exlicit-relocs</code></dt>
+<dd><p>Use or do not use assembler relocation operators when dealing with symbolic
+addresses.  The alternative is to use assembler macros instead, which may
+limit optimization.
 </p>
 </dd>
 </dl>
 
+<hr>
+<div class="header">
+<p>
+Next: <a href="RL78-Options.html#RL78-Options" accesskey="n" rel="next">RL78 Options</a>, Previous: <a href="PowerPC-Options.html#PowerPC-Options" accesskey="p" rel="prev">PowerPC Options</a>, Up: <a href="Submodel-Options.html#Submodel-Options" accesskey="u" rel="up">Submodel Options</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Option-Index.html#Option-Index" title="Index" rel="index">Index</a>]</p>
+</div>
 
 
 

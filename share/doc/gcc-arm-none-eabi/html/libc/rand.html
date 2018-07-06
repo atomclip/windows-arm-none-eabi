@@ -94,6 +94,11 @@ number between <code>0</code> and <code>RAND_MAX</code> (inclusive).
 <p><code>srand</code> does not return a result.
 </p>
 <br>
+<p><strong>Notes</strong><br>
+<code>rand</code> and <code>srand</code> are unsafe for multi-threaded applications.
+<code>rand_r</code> is thread-safe and should be used instead.
+</p>
+<br>
 <p><strong>Portability</strong><br>
 <code>rand</code> is required by ANSI, but the algorithm for pseudo-random
 number generation is not specified; therefore, even if you use

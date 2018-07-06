@@ -105,6 +105,11 @@ next token, or <code>NULL</code> if no more tokens can be found.  For
 <code>strsep</code>, a token may be the empty string.
 </p>
 <br>
+<p><strong>Notes</strong><br>
+<code>strtok</code> is unsafe for multi-threaded applications.  <code>strtok_r</code>
+and <code>strsep</code> are thread-safe and should be used instead.
+</p>
+<br>
 <p><strong>Portability</strong><br>
 <code>strtok</code> is ANSI C.
 <code>strtok_r</code> is POSIX.

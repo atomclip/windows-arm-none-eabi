@@ -56,19 +56,20 @@ Previous: <a href="wcsxfrm.html#wcsxfrm" accesskey="p" rel="prev">wcsxfrm</a>, U
 </div>
 <hr>
 <a name="wcwidth_002d_002d_002dnumber-of-column-positions-of-a-wide_002dcharacter-code"></a>
-<h3 class="section">6.29 <code>wcwidth</code>&mdash;number of column positions of a wide-character code</h3>
+<h3 class="section">6.30 <code>wcwidth</code>&mdash;number of column positions of a wide-character code</h3>
 <a name="index-wcwidth"></a>
 <p><strong>Synopsis</strong>
 </p><div class="example">
 <pre class="example">#include &lt;wchar.h&gt;
-int wcwidth(const wchar_t <var>wc</var>);
+int wcwidth(const wint_t <var>wc</var>);
 
 </pre></div>
 <p><strong>Description</strong><br>
 The <code>wcwidth</code> function shall determine the number of column
 positions required for the wide character <var>wc</var>. The application
 shall ensure that the value of <var>wc</var> is a character representable
-as a wchar_t, and is a wide-character code corresponding to a
+as a wint_t (combining Unicode surrogate pairs into single 21-bit
+Unicode code points), and is a wide-character code corresponding to a
 valid character in the current locale.
 </p>
 <br>

@@ -2,7 +2,7 @@
 <html>
 <!-- This file documents the GNU Assembler "as".
 
-Copyright (C) 1991-2017 Free Software Foundation, Inc.
+Copyright (C) 1991-2018 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -284,6 +284,11 @@ see <a href="Invoking.html#Invoking">Command-Line Options</a>.
    [<b>-mnolink-relax</b>]
    [<b>-mno-warn-regname-label</b>]
 
+<em>Target RISC-V options:</em>
+   [<b>-fpic</b>|<b>-fPIC</b>|<b>-fno-pic</b>]
+   [<b>-march</b>=<var>ISA</var>]
+   [<b>-mabi</b>=<var>ABI</var>]
+
 <em>Target RL78 options:</em>
    [<b>-mg10</b>]
    [<b>-m32bit-doubles</b>|<b>-m64bit-doubles</b>]
@@ -297,10 +302,6 @@ see <a href="Invoking.html#Invoking">Command-Line Options</a>.
    [<b>-mrelax</b>]
    [<b>-mint-register=<var>number</var></b>]
    [<b>-mgcc-abi</b>|<b>-mrx-abi</b>]
-
-<em>Target RISC-V options:</em>
-   [<b>-march</b>=<var>ISA</var>]
-   [<b>-mabi</b>=<var>ABI</var>]
 
 <em>Target s390 options:</em>
    [<b>-m31</b>|<b>-m64</b>] [<b>-mesa</b>|<b>-mzarch</b>] [<b>-march</b>=<var>CPU</var>]
@@ -1398,7 +1399,7 @@ for a PowerPC processor.
 
 
 
-<p>See <a href="RISC_002dV_002dOpts.html#RISC_002dV_002dOpts">RISC-V-Opts</a>, for the options available when as is configured
+<p>See <a href="RISC_002dV_002dOptions.html#RISC_002dV_002dOptions">RISC-V-Options</a>, for the options available when as is configured
 for a RISC-V processor.
 </p>
 

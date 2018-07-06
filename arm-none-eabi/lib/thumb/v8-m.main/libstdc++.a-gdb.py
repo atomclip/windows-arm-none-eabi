@@ -19,8 +19,8 @@ import gdb
 import os
 import os.path
 
-pythondir = '/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-633_20171130_1512067137/install-native/share/gcc-arm-none-eabi'
-libdir = '/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-633_20171130_1512067137/install-native/arm-none-eabi/lib/thumb/v8-m.main'
+pythondir = '/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-native/share/gcc-arm-none-eabi'
+libdir = '/tmp/jenkins/jenkins-GCC-7-build_toolchain_docker-775_20180622_1529687456/install-native/arm-none-eabi/lib/thumb/v8-m.main'
 
 # This file might be loaded when there is no current objfile.  This
 # can happen if the user loads it manually.  In this case we don't

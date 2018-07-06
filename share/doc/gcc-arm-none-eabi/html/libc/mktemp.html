@@ -132,6 +132,14 @@ unused filename, or the pattern you provided is not suitable for a
 filename; in that case, it returns <code>-1</code>.
 </p>
 <br>
+<p><strong>Notes</strong><br>
+Never use <code>mktemp</code>.  The generated filenames are easy to guess and
+there&rsquo;s a race between the test if the file exists and the creation
+of the file.  In combination this makes <code>mktemp</code> prone to attacks
+and using it is a security risk.  Whenever possible use <code>mkstemp</code>
+instead.  It doesn&rsquo;t suffer the race condition.
+</p>
+<br>
 <p><strong>Portability</strong><br>
 ANSI C does not require either <code>mktemp</code> or <code>mkstemp</code>; the System
 V Interface Definition requires <code>mktemp</code> as of Issue 2.  POSIX 2001

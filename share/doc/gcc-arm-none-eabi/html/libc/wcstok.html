@@ -56,7 +56,7 @@ Next: <a href="wcswidth.html#wcswidth" accesskey="n" rel="next">wcswidth</a>, Pr
 </div>
 <hr>
 <a name="wcstok_002d_002d_002dget-next-token-from-a-string"></a>
-<h3 class="section">6.26 <code>wcstok</code>&mdash;get next token from a string</h3>
+<h3 class="section">6.27 <code>wcstok</code>&mdash;get next token from a string</h3>
 <a name="index-wcstok"></a>
 <p><strong>Synopsis</strong>
 </p><div class="example">
@@ -99,6 +99,11 @@ remain, a null pointer is returned.
 <p><strong>Returns</strong><br>
 <code>wcstok</code> returns a pointer to the first wide character of a token, or
 <code>NULL</code> if there is no token.
+</p>
+<br>
+<p><strong>Notes</strong><br>
+<code>wcstok</code> is thread-safe (unlike <code>strtok</code>, but like <code>strtok_r</code>).
+<code>wcstok</code> writes into the string being searched.
 </p>
 <br>
 <p><strong>Portability</strong><br>

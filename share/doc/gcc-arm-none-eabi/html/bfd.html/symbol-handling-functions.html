@@ -2,7 +2,7 @@
 <html>
 <!-- This file documents the BFD library.
 
-Copyright (C) 1991-2017 Free Software Foundation, Inc.
+Copyright (C) 1991-2018 Free Software Foundation, Inc.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3 or
@@ -90,7 +90,7 @@ including a terminal NULL pointer. If there are no symbols in
 the BFD, then return 0.  If an error occurs, return -1.
 </p><div class="example">
 <pre class="example">#define bfd_get_symtab_upper_bound(abfd) \
-     BFD_SEND (abfd, _bfd_get_symtab_upper_bound, (abfd))
+       BFD_SEND (abfd, _bfd_get_symtab_upper_bound, (abfd))
 
 </pre></div>
 
@@ -119,7 +119,7 @@ FALSE.  This just checks whether the name has the form of a
 local label.
 </p><div class="example">
 <pre class="example">#define bfd_is_local_label_name(abfd, name) \
-  BFD_SEND (abfd, _bfd_is_local_label_name, (abfd, name))
+       BFD_SEND (abfd, _bfd_is_local_label_name, (abfd, name))
 
 </pre></div>
 
@@ -136,7 +136,7 @@ special to the particular target represented by the BFD.  Such symbols
 should normally not be mentioned to the user.
 </p><div class="example">
 <pre class="example">#define bfd_is_target_special_symbol(abfd, sym) \
-  BFD_SEND (abfd, _bfd_is_target_special_symbol, (abfd, sym))
+       BFD_SEND (abfd, _bfd_is_target_special_symbol, (abfd, sym))
 
 </pre></div>
 
@@ -151,7 +151,7 @@ Return the actual number of symbol pointers, not
 including the NULL.
 </p><div class="example">
 <pre class="example">#define bfd_canonicalize_symtab(abfd, location) \
-  BFD_SEND (abfd, _bfd_canonicalize_symtab, (abfd, location))
+       BFD_SEND (abfd, _bfd_canonicalize_symtab, (abfd, location))
 
 </pre></div>
 
@@ -192,7 +192,7 @@ information surrounding the <code>asymbol</code>. Building your own
 information, and will cause problems later on.
 </p><div class="example">
 <pre class="example">#define bfd_make_empty_symbol(abfd) \
-  BFD_SEND (abfd, _bfd_make_empty_symbol, (abfd))
+       BFD_SEND (abfd, _bfd_make_empty_symbol, (abfd))
 
 </pre></div>
 
@@ -218,7 +218,7 @@ to be used as a debugging symbol.  Further details of its use have
 yet to be worked out.
 </p><div class="example">
 <pre class="example">#define bfd_make_debug_symbol(abfd,ptr,size) \
-  BFD_SEND (abfd, _bfd_make_debug_symbol, (abfd, ptr, size))
+       BFD_SEND (abfd, _bfd_make_debug_symbol, (abfd, ptr, size))
 
 </pre></div>
 
@@ -277,8 +277,8 @@ Not enough memory exists to create private data for <var>osec</var>.
 </li></ul>
 <div class="example">
 <pre class="example">#define bfd_copy_private_symbol_data(ibfd, isymbol, obfd, osymbol) \
-  BFD_SEND (obfd, _bfd_copy_private_symbol_data, \
-            (ibfd, isymbol, obfd, osymbol))
+       BFD_SEND (obfd, _bfd_copy_private_symbol_data, \
+                 (ibfd, isymbol, obfd, osymbol))
 
 </pre></div>
 

@@ -142,6 +142,8 @@ Instrumented applications use a static destructor with priority 99
 to invoke the <code>__gcov_dump</code> function. Thus <code>__gcov_dump</code>
 is executed after all user defined static destructors,
 as well as handlers registered with <code>atexit</code>.
+If an executable loads a dynamic shared object via dlopen functionality,
+<samp>-Wl,--dynamic-list-data</samp> is needed to dump all profile data.
 </p>
 
 <hr>

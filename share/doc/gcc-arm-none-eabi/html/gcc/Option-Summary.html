@@ -996,7 +996,6 @@ See RS/6000 and PowerPC Options.
 <p><em>RISC-V Options</em>
 </p><div class="smallexample">
 <pre class="smallexample">-mbranch-cost=<var>N-instruction</var> 
--mmemcpy  -mno-memcpy 
 -mplt  -mno-plt 
 -mabi=<var>ABI-string</var> 
 -mfdiv  -mno-fdiv 
@@ -1005,7 +1004,8 @@ See RS/6000 and PowerPC Options.
 -mtune=<var>processor-string</var> 
 -msmall-data-limit=<var>N-bytes</var> 
 -msave-restore  -mno-save-restore 
--mcmodel=<var>code-model</var> 
+-mstrict-align -mno-strict-align 
+-mcmodel=medlow -mcmodel=medany 
 -mexplicit-relocs  -mno-explicit-relocs 
 </pre></div>
 
@@ -1059,7 +1059,7 @@ See RS/6000 and PowerPC Options.
 -mfloat-gprs=yes  -mfloat-gprs=no  -mfloat-gprs=single  -mfloat-gprs=double 
 -mprototype  -mno-prototype 
 -msim  -mmvme  -mads  -myellowknife  -memb  -msdata 
--msdata=<var>opt</var>  -mvxworks  -G <var>num</var> 
+-msdata=<var>opt</var>  -mreadonly-in-sdata  -mvxworks  -G <var>num</var> 
 -mrecip  -mrecip=<var>opt</var>  -mno-recip  -mrecip-precision 
 -mno-recip-precision 
 -mveclibabi=<var>type</var>  -mfriz  -mno-friz 
@@ -1276,7 +1276,9 @@ See RS/6000 and PowerPC Options.
 -msse2avx  -mfentry  -mrecord-mcount  -mnop-mcount  -m8bit-idiv 
 -mavx256-split-unaligned-load  -mavx256-split-unaligned-store 
 -malign-data=<var>type</var>  -mstack-protector-guard=<var>guard</var> 
--mmitigate-rop  -mgeneral-regs-only
+-mmitigate-rop  -mgeneral-regs-only 
+-mindirect-branch=<var>choice</var> -mfunction-return=<var>choice</var> 
+-mindirect-branch-register
 </pre></div>
 
 <p><em>x86 Windows Options</em>

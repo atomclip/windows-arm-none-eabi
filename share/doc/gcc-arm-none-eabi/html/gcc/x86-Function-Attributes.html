@@ -448,6 +448,27 @@ doing a floating-point division.
 <code>target(&quot;fpmath=sse,387&quot;)</code> option as
 <code>target(&quot;fpmath=sse+387&quot;)</code> because the comma would separate
 different options.
+</p>
+</dd>
+<dt>&lsquo;<samp>indirect_branch(&quot;<var>choice</var>&quot;)</samp>&rsquo;</dt>
+<dd><a name="index-indirect_005fbranch-function-attribute_002c-x86"></a>
+<p>On x86 targets, the <code>indirect_branch</code> attribute causes the compiler
+to convert indirect call and jump with <var>choice</var>.  &lsquo;<samp>keep</samp>&rsquo;
+keeps indirect call and jump unmodified.  &lsquo;<samp>thunk</samp>&rsquo; converts indirect
+call and jump to call and return thunk.  &lsquo;<samp>thunk-inline</samp>&rsquo; converts
+indirect call and jump to inlined call and return thunk.
+&lsquo;<samp>thunk-extern</samp>&rsquo; converts indirect call and jump to external call
+and return thunk provided in a separate object file.
+</p>
+</dd>
+<dt>&lsquo;<samp>function_return(&quot;<var>choice</var>&quot;)</samp>&rsquo;</dt>
+<dd><a name="index-function_005freturn-function-attribute_002c-x86"></a>
+<p>On x86 targets, the <code>function_return</code> attribute causes the compiler
+to convert function return with <var>choice</var>.  &lsquo;<samp>keep</samp>&rsquo; keeps function
+return unmodified.  &lsquo;<samp>thunk</samp>&rsquo; converts function return to call and
+return thunk.  &lsquo;<samp>thunk-inline</samp>&rsquo; converts function return to inlined
+call and return thunk.  &lsquo;<samp>thunk-extern</samp>&rsquo; converts function return to
+external call and return thunk provided in a separate object file.
 </p></dd>
 </dl>
 
