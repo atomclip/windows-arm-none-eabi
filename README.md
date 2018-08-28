@@ -22,12 +22,13 @@ packaged for Visual Studio Code:
 In Visual Studio Code goto extensions (Shift+Ctrl+X), search for '*atomclip*' 
 and install the extension that is suited for your operating system. 
 
-The extension has three paths for the toolchain. You can use this in the 
+The extension has four paths for the toolchain. You can use this in the 
 tasks.json.
 
 - arm-none-eabi.bin
 - arm-none-eabi.include
 - arm-none-eabi.lib
+- arm-none-eabi.libgcc
 
 Here is an example of tasks.json for GNU make. 
 ```javascript
@@ -42,6 +43,7 @@ Here is an example of tasks.json for GNU make.
         "env": {
           "INCLUDE": "${config:arm-none-eabi.include}",
           "LIB": "${config:arm-none-eabi.lib}",
+          "LIBGCC": "${config:arm-none-eabi.libgcc}/thumb/v6-m/libgcc.a",
         }
       },
       "osx": {
@@ -82,9 +84,22 @@ test:
 	@echo $(PATH)
 	@echo $(INCLUDE)
 	@echo $(LIB)
+	@echo $(GCCLIB)
 ```
 
 ## Release Notes
+
+### Version 0.1.2
+Fixed typo in path to repository causing a wrong link in the marketplace.
+
+Added a path to the libgcc files. 
+- arm-none-eabi.libgcc
+
+When you do bare metal development, you often exclude all standard libraries 
+but you still need libgcc.a for integer division etc. The path to this file 
+contains a version number that changes with every release of the toolchain. 
+Using this variable you do not need to update your makefiles with every new 
+release of the toolchain. 
 
 ### Version 0.1.0
 Version 7-2018-q2-update for Windows

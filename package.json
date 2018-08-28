@@ -3,7 +3,7 @@
   "displayName": "windows-arm-none-eabi",
   "description": "GNU Arm embedded toolchain for Windows",
   "icon": "images/gcc-windows-128x128.png",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "preview": true,
   "publisher": "atomclip",
   "engines": {
@@ -22,7 +22,7 @@
             "string",
             "null"
           ],
-          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.0/bin",
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.2/bin",
           "description": "The path to the GNU toolchain."
         },
         "arm-none-eabi.include": {
@@ -30,23 +30,31 @@
             "string",
             "null"
           ],
-          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.0/arm-none-eabi/include",
-          "description": "The path to the GCC header files."
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.2/arm-none-eabi/include",
+          "description": "The path to the header files."
         },
         "arm-none-eabi.lib": {
           "type": [
             "string",
             "null"
           ],
-          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.0/lib",
-          "description": "The path to the GCC library files."
-        }
+          "default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.2/arm-none-eabi/lib",
+          "description": "The path to the library files."
+        },
+				"arm-none-eabi.libgcc": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": "${env:USERPROFILE}/.vscode/extensions/atomclip.windows-arm-none-eabi-0.1.2/lib/gcc/arm-none-eabi/7.3.1",
+					"description": "The path to the libgcc files."
+				}
       }
     }
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/atomclip/windows-arm-non-eabi.git"
+    "url": "https://github.com/atomclip/windows-arm-none-eabi.git"
   },
   "license": "GPL-3.0",
   "scripts": {

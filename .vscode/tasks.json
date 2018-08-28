@@ -9,6 +9,7 @@
         "env": {
           "INCLUDE": "${config:arm-none-eabi.include}",
           "LIB": "${config:arm-none-eabi.lib}",
+          "LIBGCC": "${config:arm-none-eabi.libgcc}",
         }
       },
       "osx": {
