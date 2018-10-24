@@ -6,4 +6,5 @@
 This extension has moved to another repository and will no longer be updated. 
 You can uninstall this extension. 
 
+Install this version for updates. 
 [GNU Arm embedded toolchain for Windows](https://marketplace.visualstudio.com/items?itemName=metalcode-eu.windows-arm-none-eabi)

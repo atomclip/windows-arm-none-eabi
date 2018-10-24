@@ -3,7 +3,7 @@
   "displayName": "windows-arm-none-eabi",
   "description": "GNU Arm embedded toolchain for Windows",
   "icon": "images/moved.png",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "preview": true,
   "publisher": "atomclip",
   "engines": {
